@@ -1,12 +1,5 @@
 import type { NextPage } from "next";
-// import Head from "next/head";
-// import Image from "next/image";
-
-// const Header: NextPage = () => {
-//   return <>Im your Header app</>;
-// };
-
-// export default Header;
+import { FaVideo, FaOpencart } from "react-icons/fa";
 
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -109,18 +102,23 @@ function classNames(...classes: any) {
 
 function Header() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className=" shadow-lg  px-2 md:px-10  flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Your Company</span>
+            <a href="#" className="flex  items-center">
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://tailwindui.com/img/logos/mark.svg?color=pink&shade=600"
                 alt=""
               />
+              <span className="text-pink-700 ml-2 md:text-2xl md:ml-5 md:font-semi-bold">
+                {"Gulabi Company".toUpperCase()}
+              </span>
             </a>
+            {/* <a href="#">
+              <span className="sr-only">Your Company</span>
+            </a> */}
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -128,7 +126,7 @@ function Header() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+          {/* <Popover.Group as="nav" className="hidden space-x-10 md:flex">
             <Popover className="relative">
               {({ open }) => (
                 <>
@@ -306,19 +304,19 @@ function Header() {
                 </>
               )}
             </Popover>
-          </Popover.Group>
+          </Popover.Group> */}
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a
+            {/* <a
               href="#"
               className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Sign in
-            </a>
+            </a> */}
             <a
               href="#"
-              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700"
             >
-              Sign up
+              Connect With Us
             </a>
           </div>
         </div>
@@ -335,27 +333,31 @@ function Header() {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+          className="mx-2 z-50 mt-2 absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
         >
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <div>
+                <div className="flex items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=pink&shade=600"
                     alt="Your Company"
                   />
+
+                  <span className="text-pink-700 ml-2 md:text-2xl md:ml-5 md:font-semi-bold">
+                    {"Gulabi Company".toUpperCase()}
+                  </span>
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500">
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>
               <div className="mt-6">
-                <nav className="grid gap-y-8">
+                {/* <nav className="grid gap-y-8">
                   {solutions.map((item) => (
                     <a
                       key={item.name}
@@ -371,10 +373,38 @@ function Header() {
                       </span>
                     </a>
                   ))}
+                </nav> */}
+                <nav className="grid gap-y-8">
+                  <a className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                    {/* <item.icon
+                      className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                      aria-hidden="true"
+                    /> */}
+
+                    <FaVideo size={19} className="text-pink-700" />
+
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      {/* {item.name} */}
+                      Videos
+                    </span>
+                  </a>
+                  <a className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
+                    {/* <item.icon
+                      className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                      aria-hidden="true"
+                    /> */}
+
+                    <FaOpencart size={19} className="text-pink-700" />
+
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      {/* {item.name} */}
+                      Book Now
+                    </span>
+                  </a>
                 </nav>
               </div>
             </div>
-            <div className="space-y-6 py-6 px-5">
+            {/* <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <a
                   href="#"
@@ -413,7 +443,7 @@ function Header() {
                   </a>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </Popover.Panel>
       </Transition>
